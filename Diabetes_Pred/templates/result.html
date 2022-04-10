@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='index_styling.css')}}">
+
+    <link rel="shortcut icon" href="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-health-medical-kiranshastry-lineal-color-kiranshastry.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Result</title>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="/" class="w3-bar-item w3-button"><b>Diabetes Prediction
+          </b></a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            
+            <a href="/about" class="w3-bar-item w3-button">About</a>
+            <a href="https://github.com/DynamicCoder-1942" target="blank"><img  height="" width="40" src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
+            <a href="https://www.linkedin.com/in/aditya-phadtare-8048a41bb/" target="blank"><img src="https://img.icons8.com/color/48/000000/linkedin.png" height="56" width="40" ></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-content w3-padding" style="max-width:1564px">
+        <div class="w3-container w3-padding-32" id="projects">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Results</h3>
+          </div>
+          <div class="w3-border-bottom w3-border-light-grey w3-padding-16">{{data}}</div>
+    
+    </div>
+</body>
+</html>

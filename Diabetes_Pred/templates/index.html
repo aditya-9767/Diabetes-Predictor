@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html><head>
+<title>Diabetes Prediction</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static',filename='index_styling.css')}}">
+<link rel="shortcut icon" href="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-health-medical-kiranshastry-lineal-color-kiranshastry.png" type="image/x-icon">
+</head><body>
+  
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="/" class="w3-bar-item w3-button"><b>Diabetes Prediction
+    </b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      
+      <a href="/about" class="w3-bar-item w3-button">About</a>
+      <a href="https://github.com/DynamicCoder-1942" target="blank"><img  height="" width="40" src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
+      <a href="https://www.linkedin.com/in/aditya-phadtare-8048a41bb/" target="blank"><img src="https://img.icons8.com/color/48/000000/linkedin.png" height="56" width="40" ></a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Predict Here</h3>
+  </div>
+
+  <div class="container">
+    <form action="/predictions" method="POST" id="myForm" >
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>AGE</strong> <span class="tooltiptext">Age</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="age" placeholder="Enter your AGE" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Gender</strong>
+        <span class="tooltiptext">Gender</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="gender" required >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Polyuria</strong>
+            <span class="tooltiptext">Excessive urination</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="polyuria" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Polydipsia</strong>
+            <span class="tooltiptext">Excess thirst</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="polydipsia" >
+                <option value="none" selected disabled hidden >
+                    Select an Option
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>      
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Sudden Weight Loss</strong>
+            <span class="tooltiptext">Weight Loss</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="weightloss" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Weakness</strong>
+            <span class="tooltiptext">Weakness</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="weakness" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Polyphagia</strong>
+            <span class="tooltiptext">Excessive eating</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="polyphagia" >
+                <option value="none" selected disabled hidden>
+                    Select an Option 
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Genital Thrush</strong>
+            <span class="tooltiptext">Irritation at genitals</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="genitalthrush">
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Visual Blurring</strong>
+            <span class="tooltiptext">Blurry vision</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="visualblurring" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Itching</strong>
+            <span class="tooltiptext">Itching</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="itching" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Irritability</strong>
+            <span class="tooltiptext">Irritation</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="irritability" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Delayed Healing</strong>
+            <span class="tooltiptext">Slow Healing</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="delayedhealing" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Partial Paresis</strong>
+            <span class="tooltiptext">Partial / Mild Paralysis</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="partialparesis" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Muscle Stiffness</strong>
+            <span class="tooltiptext">Muscles feel tight</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="musclestiffness" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Alopecia</strong>
+            <span class="tooltiptext">Baldness</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="alopesia" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Obesity</strong>
+            <span class="tooltiptext">Overweight</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="obesity" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="1">YES</option>
+                <option value="0">NO</option> 
+              
+            </select>
+          </div>
+      </div>
+
+      
+      
+      <div class="row">
+        <input type="submit" value="SUBMIT" style="width: 82px; height: 38px;margin-top: 12px;">
+        <input  type="reset" value="RESET" style="width: 82px; height: 38px;margin-top: 12px;">
+      </div>
+    </form>
+    
+    
+  </div>
+
+
+  
+
+<!-- End page content -->
+</div>
+
+
+
+
+</body>
+</html>
